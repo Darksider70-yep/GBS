@@ -1,8 +1,9 @@
 class account:
     no_of_accounts = 0
-    def __init__(self, ID, name, AccountType, Balance, Status):
+    def __init__(self, ID, name, age, AccountType, Balance, Status):
         self.ID = ID     
         self.name = name 
+        self.age = age
         self.AccountType = AccountType
         self.Balance = Balance
         self.Status = Status
@@ -30,7 +31,8 @@ while True:
             AccountType = input("Enter your account type (Savings/Current): ")
             Balance = float(input("Enter your initial balance: "))
             Status = input("Enter your account status (Active/Inactive): ")
-            new_account = account(ID, name, AccountType, Balance, Status)
+            age = int(input("Enter your age: "))
+            new_account = account(ID, name, age, AccountType, Balance, Status)
             print("\nAccount created successfully!\n")
         case 2:
             if new_account is None:
