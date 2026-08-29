@@ -40,12 +40,12 @@ new_account: account | None = None
 
 while True:
     print("=====================================\nGLOBAL DIGITAL BANK - ACCOUNT TEST\n=====================================\n")
-    print("Features Available:\n1. Create Account\n2. Deposit Money\n3. Withdraw Money\n4. Check Balance\n5. Check Account Status\n6. Create Another Account\n7. Exit\n")
+    print("Features Available:\n1. Create Account\n2. Deposit Money\n3. Withdraw Money\n4. Check Balance\n5. Check Account Status\n6. Create Another Account\n7. View All Accounts\n8. Exit\n")
 
     try:
-        ans = int(input("Choose an option (1-7): "))
+        ans = int(input("Choose an option (1-8): "))
     except ValueError:
-        print("\nPlease enter a number from 1 to 7.\n")
+        print("\nPlease enter a number from 1 to 8.\n")
         continue
 
     match ans:
@@ -97,8 +97,12 @@ while True:
             no_of_accounts = account.no_of_accounts
             print(f"\nYou have created {no_of_accounts} account(s) so far.\n")
         case 7:
+            print("\nAll Accounts:\n")
+            for acc in account.all_accounts:
+                print(f"ID: {acc.get_id()}, Name: {acc.get_name()}, Balance: {acc.get_balance()}, Status: {acc.get_status()}, Account Type: {acc.get_account_type()}")
+        case 8:
             break
         case _:
-            print("\nPlease choose an option from 1 to 7.\n")
+            print("\nPlease choose an option from 1 to 8.\n")
 
 print("\nThank you for using Global Digital Bank.\n")
