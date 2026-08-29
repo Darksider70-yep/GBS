@@ -59,6 +59,8 @@ while True:
             age = int(input("Enter your age: "))
             new_account = account(ID, name, age, AccountType, Balance, Status)
             print("\nAccount created successfully!\n")
+            no_of_accounts = account.no_of_accounts
+            print(f"\nYou have created {no_of_accounts} account(s) so far.\n")
         case 2:
             if new_account is None:
                 print("\nPlease create an account first.\n")
@@ -85,6 +87,13 @@ while True:
             print(f"\nYour account status is: {new_account.get_status()}\n")
         case 6:
             new_account = None
+            ID = input("Enter your ID: ")
+            name = input("Enter your name: ")
+            AccountType = input("Enter your account type (Savings/Current): ")
+            Balance = float(input("Enter your initial balance: "))
+            Status = input("Enter your account status (Active/Inactive): ")
+            age = int(input("Enter your age: "))
+            new_account = account(ID, name, age, AccountType, Balance, Status)
             no_of_accounts = account.no_of_accounts
             print(f"\nYou have created {no_of_accounts} account(s) so far.\n")
         case 7:
