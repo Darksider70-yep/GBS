@@ -1,10 +1,12 @@
 class account:
+    no_of_accounts = 0
     def __init__(self, ID, name, AccountType, Balance, Status):
         self.ID = ID     
         self.name = name 
         self.AccountType = AccountType
         self.Balance = Balance
         self.Status = Status
+        account.no_of_accounts += 1
 
 print("A simple account class for the global Digital bank system.\nThis is a bare bone implementation with minimal functionality.\n\nA simple account class with basic deposit and withdraw functionality.\n")
 
