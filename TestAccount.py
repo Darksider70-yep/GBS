@@ -1,4 +1,3 @@
-import account
 from account import account as Account
 
 print("A simple account class for the global Digital bank system.\nThis is a bare bone implementation with minimal functionality.\n\nA simple account class with basic deposit and withdraw functionality.\n")
@@ -24,10 +23,10 @@ while True:
             Balance = float(input("Enter your initial balance: "))
             Status = input("Enter your account status (Active/Inactive): ")
             age = int(input("Enter your age: "))
-            new_account = account(ID, name, age, AccountType, Balance, Status)
+            new_account = Account(ID, name, age, AccountType, Balance, Status)
             print("\nAccount created successfully!\n")
-            account.add_account(new_account)
-            no_of_accounts = len(account.all_accounts())
+            Account.add_account(new_account)
+            no_of_accounts = len(Account.all_accounts())
             print(f"\nYou have created {no_of_accounts} account(s) so far.\n")
         case 2:
             if new_account is None:
@@ -61,13 +60,13 @@ while True:
             Balance = float(input("Enter your initial balance: "))
             Status = input("Enter your account status (Active/Inactive): ")
             age = int(input("Enter your age: "))
-            new_account = account(ID, name, age, AccountType, Balance, Status)
-            account.add_account(new_account)
-            no_of_accounts = len(account.all_accounts())
+            new_account = Account(ID, name, age, AccountType, Balance, Status)
+            Account.add_account(new_account)
+            no_of_accounts = len(Account.all_accounts())
             print(f"\nYou have created {no_of_accounts} account(s) so far.\n")
         case 7:
             print("\nAll Accounts:\n")
-            for acc in account.all_accounts():
+            for acc in Account.all_accounts():
                 print(f"ID: {acc.ID}, Name: {acc.name}, Balance: {acc.get_balance()}, Status: {acc.get_status()}, Account Type: {acc.AccountType}")
         case 8:
             break
