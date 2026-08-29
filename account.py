@@ -33,6 +33,12 @@ class account:
     def set_age(self, age: int) -> None:
         self.age = age
 
+    def all_accounts() -> list:
+        return [acc for acc in account.__subclasses__()]
+    def add_account(cls, account) -> None:
+        cls.all_accounts().append(account)
+    
+
 
 print("A simple account class for the global Digital bank system.\nThis is a bare bone implementation with minimal functionality.\n\nA simple account class with basic deposit and withdraw functionality.\n")
 
@@ -59,7 +65,8 @@ while True:
             age = int(input("Enter your age: "))
             new_account = account(ID, name, age, AccountType, Balance, Status)
             print("\nAccount created successfully!\n")
-            no_of_accounts = account.no_of_accounts
+            account.add_account(account, new_account)
+            no_of_accounts = len(account.all_accounts())
             print(f"\nYou have created {no_of_accounts} account(s) so far.\n")
         case 2:
             if new_account is None:
@@ -94,11 +101,12 @@ while True:
             Status = input("Enter your account status (Active/Inactive): ")
             age = int(input("Enter your age: "))
             new_account = account(ID, name, age, AccountType, Balance, Status)
-            no_of_accounts = account.no_of_accounts
+            account.add_account(account, new_account)
+            no_of_accounts = len(account.all_accounts())
             print(f"\nYou have created {no_of_accounts} account(s) so far.\n")
         case 7:
             print("\nAll Accounts:\n")
-            for acc in account.all_accounts:
+            for acc in account.all_accounts():
                 print(f"ID: {acc.get_id()}, Name: {acc.get_name()}, Balance: {acc.get_balance()}, Status: {acc.get_status()}, Account Type: {acc.get_account_type()}")
         case 8:
             break
