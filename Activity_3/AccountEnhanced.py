@@ -62,13 +62,13 @@ class Account:
         return True
 
     def setPin(self, pin: int) -> bool:
-        if isinstance(pin, bool) or not isinstance(pin, int) or not 1000 <= pin <= 9999:
+        if isinstance(pin, bool) or not isinstance(pin, int) or not (1000 <= pin <= 9999):
             return False
         self.pin = pin
         return True
 
     def verifyPin(self, pin: int) -> bool:
-        return self.pin is not None and self.pin == pin
+        return self.pin == pin
 
     def hasPin(self) -> bool:
         return self.pin is not None
