@@ -1,4 +1,9 @@
-from Activity_3.AccountEnhanced import Account as Account
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from Activity_1.account import account as Account
 
 print("A simple account class for the global Digital bank system.\nThis is a bare bone implementation with minimal functionality.\n\nA simple account class with basic deposit and withdraw functionality.\n")
 
