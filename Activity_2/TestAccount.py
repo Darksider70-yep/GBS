@@ -1,4 +1,4 @@
-from account import account as Account
+from Account import account as Account
 
 print("A simple account class for the global Digital bank system.\nThis is a bare bone implementation with minimal functionality.\n\nA simple account class with basic deposit and withdraw functionality.\n")
 
